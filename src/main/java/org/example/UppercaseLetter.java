@@ -5,10 +5,6 @@ import java.util.Arrays;
 
 public class UppercaseLetter {
 
-    public static void main(String[] args) {
-
-
-    }
 
     public static String upperCaseFirstLetter(String input) {
         String[] words = input.split(" ");

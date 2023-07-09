@@ -4,10 +4,7 @@ import java.util.Arrays;
 
 
 public class RemoveDuplicatesChars {
-    public static void main(String[] args) {
 
-
-    }
 
     public static String duplicateRemover(String input) {
         StringBuilder output = new StringBuilder();

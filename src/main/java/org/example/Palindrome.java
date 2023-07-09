@@ -5,10 +5,7 @@ import java.util.stream.IntStream;
 
 
 public class Palindrome {
-    public static void main(String[] args) {
 
-
-    }
 
     public static String getPalindrome(String input) {
 
