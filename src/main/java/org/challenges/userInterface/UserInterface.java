@@ -50,8 +50,13 @@ public class UserInterface {
         removeDuplicatesButton.setBackground(new Color(204, 255, 204));
 
         removeDuplicatesButton.addActionListener(e -> {
-            String input = textField.getText();
-            JOptionPane.showMessageDialog(frame, RemoveDuplicatesChars.duplicateRemover(input));
+
+            try {
+
+            JOptionPane.showMessageDialog(frame, RemoveDuplicatesChars.duplicateRemover(textField.getText()));}
+            catch (IllegalArgumentException ex){
+                JOptionPane.showMessageDialog(frame,ex.getMessage());}
+
         });
         panel.add(removeDuplicatesButton);
 
@@ -63,9 +68,14 @@ public class UserInterface {
         palindromeButton.setBackground(new Color(204, 204, 255));
 
         palindromeButton.addActionListener(e -> {
-            String input = textField.getText();
-            JOptionPane.showMessageDialog(frame, Palindrome.getPalindrome(input));
+
+            try{
+            JOptionPane.showMessageDialog(frame, Palindrome.getPalindrome(textField.getText()));}
+            catch (IllegalArgumentException ex){
+                JOptionPane.showMessageDialog(frame, ex.getMessage());}
         });
+
+
         panel.add(palindromeButton);
 
         panel.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -76,9 +86,13 @@ public class UserInterface {
         uppercaseButton.setBackground(new Color(255, 255, 204));
 
         uppercaseButton.addActionListener(e -> {
-            String input = textField.getText();
+            try {
+                JOptionPane.showMessageDialog(frame, UppercaseLetter.upperCaseFirstLetter(textField.getText()));
+            }catch (IllegalArgumentException ex){
+                JOptionPane.showMessageDialog(frame,ex.getMessage());
 
-            JOptionPane.showMessageDialog(frame, UppercaseLetter.upperCaseFirstLetter(input));
+            }
+
         });
         panel.add(uppercaseButton);
 
@@ -90,9 +104,17 @@ public class UserInterface {
         anagramPalindromeButton.setBackground(new Color(204, 255, 255));
 
         anagramPalindromeButton.addActionListener(e -> {
-            String input = textField.getText();
-            boolean output = PalindromeAnagram.isAnagramOfPalindrome(input);
-            JOptionPane.showMessageDialog(frame, output ? "True" : "False");
+
+            try {
+
+                JOptionPane.showMessageDialog(frame, PalindromeAnagram.isAnagramOfPalindrome(textField.getText()) ? "True" : "False");
+
+            }catch (IllegalArgumentException ex){
+
+                JOptionPane.showMessageDialog(frame, ex.getMessage());
+
+            }
+
         });
         panel.add(anagramPalindromeButton);
 
