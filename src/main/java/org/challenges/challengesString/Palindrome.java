@@ -1,4 +1,4 @@
-package org.example;
+package org.challenges.challengesString;
 
 import java.util.Comparator;
 import java.util.stream.IntStream;
@@ -13,9 +13,10 @@ public class Palindrome {
         return IntStream.range(0, input.length())
                 .boxed()
                 .flatMap(i -> IntStream.rangeClosed(i + 1, input.length()).mapToObj(j -> input.substring(i, j)))
+                .filter(substring -> substring.length() > 1)
                 .filter(substring -> new StringBuilder(substring).reverse().toString().equals(substring))
                 .max(Comparator.comparingInt(String::length))
-                .orElse("");
+                .orElse("Não tem palíndromo");
     }
 
 

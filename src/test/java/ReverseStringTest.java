@@ -1,4 +1,4 @@
-import org.example.ReverseString;
+import org.challenges.challengesString.ReverseString;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

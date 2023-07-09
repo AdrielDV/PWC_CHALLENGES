@@ -1,4 +1,4 @@
-import org.example.UppercaseLetter;
+import org.challenges.challengesString.UppercaseLetter;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

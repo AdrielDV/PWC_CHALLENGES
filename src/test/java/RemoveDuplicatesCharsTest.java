@@ -1,4 +1,4 @@
-import org.example.RemoveDuplicatesChars;
+import org.challenges.challengesString.RemoveDuplicatesChars;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

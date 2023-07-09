@@ -1,4 +1,4 @@
-package org.example;
+package org.challenges.challengesString;
 
 import java.util.Arrays;
 
