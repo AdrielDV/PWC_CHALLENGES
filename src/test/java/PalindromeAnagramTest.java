@@ -12,7 +12,15 @@ public class PalindromeAnagramTest {
         assertTrue(PalindromeAnagram.isAnagramOfPalindrome("racecar"));
         assertTrue(PalindromeAnagram.isAnagramOfPalindrome("carrace"));
         assertFalse(PalindromeAnagram.isAnagramOfPalindrome("hello"));
+        assertFalse(PalindromeAnagram.isAnagramOfPalindrome("abcde"));
+        assertFalse(PalindromeAnagram.isAnagramOfPalindrome("ABCDE"));
+        assertFalse(PalindromeAnagram.isAnagramOfPalindrome("12345"));
 
+    }
+
+    @Test
+    public void testIsAnagramOfPalindromeWithEmptyInput() {
+        assertThrows(IllegalArgumentException.class, () -> PalindromeAnagram.isAnagramOfPalindrome(""));
     }
 
 }

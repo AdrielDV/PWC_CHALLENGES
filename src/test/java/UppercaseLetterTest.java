@@ -2,6 +2,7 @@ import org.challenges.challengesString.UppercaseLetter;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class UppercaseLetterTest {
 
@@ -14,6 +15,10 @@ public class UppercaseLetterTest {
         assertEquals("It's Me, Adriel!", UppercaseLetter.upperCaseFirstLetter("it's me, adriel!"));
 
 
+    }
+    @Test
+    public void testUpperCaseFirstLetterWithEmptyInput() {
+        assertThrows(IllegalArgumentException.class, () -> UppercaseLetter.upperCaseFirstLetter(""));
     }
 
 }
