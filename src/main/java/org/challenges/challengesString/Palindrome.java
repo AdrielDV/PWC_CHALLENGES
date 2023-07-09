@@ -9,6 +9,10 @@ public class Palindrome {
 
     public static String getPalindrome(String input) {
 
+        if (input.length()==0) {
+            throw new IllegalArgumentException("A entrada não pode ter menos de 1 char");
+        }
+
 
         return IntStream.range(0, input.length())
                 .boxed()

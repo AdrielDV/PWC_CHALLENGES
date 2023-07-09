@@ -5,7 +5,21 @@ import java.util.stream.Collectors;
 public class PalindromeAnagram {
 
 
+    public static void main(String[] args) {
+
+
+
+    }
+
+
+
+
     public static boolean isAnagramOfPalindrome(String input) {
+
+
+        if (input.length()==0) {
+            throw new IllegalArgumentException("A entrada não pode ter menos de 1 char");
+        }
 
         return input.chars()
                 .mapToObj(c -> (char) c)
