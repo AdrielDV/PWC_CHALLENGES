@@ -120,17 +120,20 @@ public void testGetPalindromeWithEmptyInput() {
 
 ### upperCaseFirstLetter
 
-Este método recebe uma string como entrada e retorna a string com a primeira letra de cada palavra em maiúscula.
+Este método recebe uma string como entrada e retorna a string com a primeira letra de cada inicio de frase em maiúscula.
 
 ```java
-public static String upperCaseFirstLetter(String input) {
-    if (input.length() == 0) {
-        throw new IllegalArgumentException("A entrada não pode ter menos de 1 char");
+    public static String upperCaseFirstLetter(String input) {
+        if (input.length() == 0) {
+            throw new IllegalArgumentException("A entrada não pode ter menos de 1 char");
+        }
+
+        String[] sentences = input.split("(?<=[.!?])\\s+");
+        for (int i = 0; i < sentences.length; i++) {
+            sentences[i] = sentences[i].substring(0, 1).toUpperCase() + sentences[i].substring(1);
+        }
+        return String.join(" ", sentences);
     }
-    String[] words = input.split(" ");
-    Arrays.setAll(words, i -> words[i].substring(0, 1).toUpperCase() + words[i].substring(1));
-    return String.join(" ", words);
-}
 ```
 
 #### Testes unitários para upperCaseFirstLetter
@@ -138,8 +141,10 @@ public static String upperCaseFirstLetter(String input) {
 ```java
 @Test
 public void upperCaseFirstLetterTest(){
-    assertEquals("Hello. How Are You? I'm Fine, Thank You.", UppercaseLetter.upperCaseFirstLetter("hello. how are you? i'm fine, thank you."));
-    assertEquals("It's Me, Adriel!", UppercaseLetter.upperCaseFirstLetter("it's me, adriel!"));
+
+ assertEquals("Hello. How are you? I'm fine, thank you.", UppercaseLetter.upperCaseFirstLetter("hello. how are you? i'm fine, thank you."));
+ assertEquals("Good night. I'm gonna sleep", UppercaseLetter.upperCaseFirstLetter("good night. i'm gonna sleep"));
+
 }
 
 @Test
