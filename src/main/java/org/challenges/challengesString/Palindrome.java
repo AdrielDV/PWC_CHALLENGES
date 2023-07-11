@@ -6,7 +6,6 @@ import java.util.stream.IntStream;
 
 public class Palindrome {
 
-
     public static String getPalindrome(String input) {
 
         if (input.length()==0) {
