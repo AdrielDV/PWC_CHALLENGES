@@ -11,8 +11,8 @@ public class UppercaseLetterTest {
     @Test
     public void upperCaseFirstLetterTest(){
 
-        assertEquals("Hello. How Are You? I'm Fine, Thank You.", UppercaseLetter.upperCaseFirstLetter("hello. how are you? i'm fine, thank you."));
-        assertEquals("It's Me, Adriel!", UppercaseLetter.upperCaseFirstLetter("it's me, adriel!"));
+        assertEquals("Hello. How are you? I'm fine, thank you.", UppercaseLetter.upperCaseFirstLetter("hello. how are you? i'm fine, thank you."));
+        assertEquals("Good night. I'm gonna sleep", UppercaseLetter.upperCaseFirstLetter("good night. i'm gonna sleep"));
 
 
     }
